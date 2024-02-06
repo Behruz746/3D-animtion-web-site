@@ -11,11 +11,47 @@ html,
 body {
   height: 100%;
   width: 100%;
+  color: #000;
 }
 
 #main {
   position: relative;
   overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+}
+.header .header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  position: fixed;
+  z-index: 99;
+}
+.header h3 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #000;
+}
+.header .header__contact {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header .header__contact a {
+  padding: 10px;
+}
+.header .header__contact a img {
+  width: 1.5rem;
+  height: auto;
 }
 
 #page,
@@ -28,9 +64,103 @@ body {
   position: relative;
 }
 
+#page {
+  padding-top: 200px;
+}
+#page .info__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+#page h3 {
+  width: 36%;
+  font-weight: 400;
+}
+#page .text__container {
+  width: 36%;
+}
+#page .text__container h3 {
+  width: 100%;
+  text-align: right;
+}
+#page .text__container h4 {
+  text-align: right;
+  font-weight: 500;
+}
+
 canvas {
   max-width: 100vw;
   max-height: 100vh;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 9;
+}
+
+.text--animation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 40%;
+  font-size: 100px;
+  white-space: nowrap;
+  font-family: gilroy;
+}
+
+.text--animation > h1 {
+  font-weight: 400;
+  animation-name: anim;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.text--animation > h1 > span {
+  -webkit-text-stroke: 1.2px #000;
+  color: transparent;
+  font-weight: 500;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 1230px) {
+  .info__container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .info__container h3 {
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    text-align: left !important;
+    color: #fff;
+  }
+  .info__container .text__container {
+    padding: 10px;
+    background-color: #333;
+    width: 50% !important;
+    border-radius: 10px;
+  }
+  .info__container .text__container h3,
+  .info__container .text__container h4 {
+    text-align: left !important;
+    color: #fff;
+  }
+  canvas {
+    width: 85%;
+    height: 85%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }/*# sourceMappingURL=style.css.map */
