@@ -1,3 +1,9 @@
+const loadEl = document.getElementById("preloader")
+
+window.addEventListener("load", () => {
+  loadEl.style.display = "none"
+})
+
 function locomotive() {
   gsap.registerPlugin(ScrollTrigger) // GSAP kutubxonasi
 
