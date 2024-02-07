@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: gilroy;
+  text-decoration: none;
 }
 
 html,
@@ -62,11 +63,9 @@ body {
   width: 100vw;
   background-color: #f1f1f1;
   position: relative;
-}
-
-#page {
   padding-top: 200px;
 }
+
 #page .info__container {
   display: flex;
   align-items: flex-start;
@@ -76,11 +75,13 @@ body {
   position: relative;
 }
 #page h3 {
-  width: 36%;
+  max-width: 560px;
+  width: 100%;
   font-weight: 400;
 }
 #page .text__container {
-  width: 36%;
+  max-width: 560px;
+  width: 100%;
 }
 #page .text__container h3 {
   width: 100%;
@@ -89,6 +90,53 @@ body {
 #page .text__container h4 {
   text-align: right;
   font-weight: 500;
+}
+
+#page1 .about__container,
+#page2 .about__container,
+#page3 .about__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+#page1 .about__container h1,
+#page2 .about__container h1,
+#page3 .about__container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+#page1 .about__container p,
+#page2 .about__container p,
+#page3 .about__container p {
+  padding: 15px 0;
+  font-weight: 500;
+}
+#page1 .about__container .about__bottom h1,
+#page1 .about__container .about__bottom p,
+#page2 .about__container .about__bottom h1,
+#page2 .about__container .about__bottom p,
+#page3 .about__container .about__bottom h1,
+#page3 .about__container .about__bottom p {
+  text-align: right;
+}
+#page1 .about__container .about__bottom,
+#page2 .about__container .about__bottom,
+#page3 .about__container .about__bottom {
+  align-self: flex-end;
+}
+
+#page2 .about__bottom {
+  max-width: 520px;
+  width: 100%;
+}
+
+#page3 .about__top {
+  max-width: 520px;
+  width: 100%;
 }
 
 canvas {
@@ -125,6 +173,25 @@ canvas {
   font-weight: 500;
 }
 
+.footer {
+  padding: 15px 0;
+  background-color: #f1f1f1;
+}
+.footer .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.footer h1 {
+  font-size: 14px;
+}
+.footer a {
+  color: #333;
+  font-size: 12px;
+}
+
 @keyframes anim {
   0% {
     transform: translateX(0);
@@ -148,7 +215,7 @@ canvas {
   .info__container .text__container {
     padding: 10px;
     background-color: #333;
-    width: 50% !important;
+    max-width: 670px;
     border-radius: 10px;
   }
   .info__container .text__container h3,
@@ -162,5 +229,17 @@ canvas {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 680px) {
+  .info__container h3 {
+    font-size: 16px;
+  }
+  .info__container .text__container h3 {
+    font-size: 16px;
+  }
+  canvas {
+    width: 95%;
+    height: 95%;
   }
 }/*# sourceMappingURL=style.css.map */

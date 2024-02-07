@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: gilroy;
+  text-decoration: none;
 }
 
 html,
@@ -66,10 +67,10 @@ body {
   width: 100vw;
   background-color: #f1f1f1;
   position: relative;
+  padding-top: 200px;
 }
 
 #page {
-  padding-top: 200px;
   .info__container {
     display: flex;
     align-items: flex-start;
@@ -80,12 +81,14 @@ body {
   }
 
   h3 {
-    width: 36%;
+    max-width: 560px;
+    width: 100%;
     font-weight: 400;
   }
 
   .text__container {
-    width: 36%;
+    max-width: 560px;
+    width: 100%;
     h3 {
       width: 100%;
       text-align: right;
@@ -95,6 +98,55 @@ body {
       text-align: right;
       font-weight: 500;
     }
+  }
+}
+
+#page1,
+#page2,
+#page3 {
+  .about__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    z-index: 11;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      padding: 15px 0;
+      font-weight: 500;
+    }
+
+    .about__bottom {
+      h1,
+      p {
+        text-align: right;
+      }
+    }
+
+    .about__bottom {
+      align-self: flex-end;
+    }
+  }
+}
+
+#page2 {
+  .about__bottom {
+    max-width: 520px;
+    width: 100%;
+  }
+}
+
+#page3 {
+  .about__top {
+    max-width: 520px;
+    width: 100%;
   }
 }
 
@@ -132,6 +184,28 @@ canvas {
   font-weight: 500;
 }
 
+.footer {
+  padding: 15px 0;
+  background-color: #f1f1f1ff;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  h1 {
+    font-size: 14px;
+  }
+
+  a {
+    color: #333;
+    font-size: 12px;
+  }
+}
+
 @keyframes anim {
   0% {
     transform: translateX(0);
@@ -157,7 +231,7 @@ canvas {
     .text__container {
       padding: 10px;
       background-color: #333;
-      width: 50% !important;
+      max-width: 670px;
       border-radius: 10px;
       h3,
       h4 {
@@ -173,5 +247,24 @@ canvas {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .info__container {
+    h3 {
+      font-size: 16px;
+    }
+
+    .text__container {
+      h3 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  canvas {
+    width: 100% - 5%;
+    height: 100% - 5%;
   }
 }
